@@ -14,7 +14,7 @@ const {
 
 mongoose
   .connect(process.env.MONGO_URL)
-  .then((e) => console.log("MongoDB Connected"));
+  .then((e) => ("MongoDB Connected"));
 
 const Blog = require("./models/blog");
 app.set("view engine", "ejs");
@@ -35,10 +35,11 @@ app.get("/", async (req, res) => {
 });
 
 
+
 app.use("/user", userRoute);
 
 app.use("/blog", blogRoute);
 
 app.listen(PORT, () => {
-  console.log(`Server is running at http://localhost:${PORT}`);
+  (`Server is running at http://localhost:${PORT}`);
 });

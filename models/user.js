@@ -74,10 +74,10 @@ userSchema.static(
       .update(password)
       .digest("hex");
 
-    console.log("salt" + salt);
-    console.log("hashedPasswordpassword" + hashedPassword);
+    ("salt" + salt);
+    ("hashedPasswordpassword" + hashedPassword);
 
-    console.log("userProvidePassword" + userProvidePassword);
+    ("userProvidePassword" + userProvidePassword);
 
     if (userProvidePassword !== hashedPassword)
       throw new Error("Incorrect Password");

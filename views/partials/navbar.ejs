@@ -21,6 +21,8 @@
           <a class="nav-link active" aria-current="page" href="/">Home</a>
         </li>
 
+      
+
         <% if (locals.user) { %>
         <li class="nav-item">
           <a class="nav-link" href="/blog/add-new">Add Blog</a>
@@ -33,7 +35,10 @@
             data-bs-toggle="dropdown"
             aria-expanded="false"
           >
-            Rishab Jha
+
+          <%= (locals.user.fullname) %>
+
+          
           </a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="/user/logout">Logout</a></li>

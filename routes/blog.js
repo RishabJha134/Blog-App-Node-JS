@@ -24,10 +24,10 @@ router.get("/add-new", (req, res) => {
 });
 
 router.post("/", upload.single("coverImage"), async (req, res) => {
-  console.log(req);
-  console.log(req.file);
-  console.log(req.body);
-  console.log("req.user" + req.user._id);
+  (req);
+  (req.file);
+  (req.body);
+  ("req.user" + req.user._id);
   const { title, body } = req.body;
   const blog = await Blog.create({
     body,
@@ -36,7 +36,7 @@ router.post("/", upload.single("coverImage"), async (req, res) => {
     coverImageURL: `/uploads/${req.file.filename}`,
   });
 
-  console.log(blog);
+  (blog);
 
   // return res.redirect(`/blog/${blog._id}`);
   return res.redirect("/");
@@ -47,9 +47,9 @@ router.get("/:id", async function (req, res) {
   const comments = await Comment.find({ blogId: req.params.id }).populate(
     "createdBy"
   );
-  console.log("comment->" + comments);
-  console.log("blog->" + blog);
-  // console.log("req.user->" + req.user);
+  ("comment->" + comments);
+  ("blog->" + blog);
+  // ("req.user->" + req.user);
   return res.render("blog", {
     user: req.user,
     blog: blog,
@@ -58,7 +58,7 @@ router.get("/:id", async function (req, res) {
 });
 
 router.post("/comment/:blogId", async function (req, res) {
-  console.log("req.body->"+req.body)
+  ("req.body->"+req.body)
    await Comment.create({
    
     content: req.body.content,
